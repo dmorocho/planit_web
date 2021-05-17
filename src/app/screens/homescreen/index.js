@@ -1,8 +1,18 @@
 import React from 'react'
+import './home.css'
 
 const HomePage = () => {
     return(
-        <p>hello</p>
+        <div className ="home">
+
+        <p>hello component</p>
+        {/* home */}
+      {/* Header */}
+      {/* banner */}
+      {/* card sections */}
+      {/* footer */}
+     
+        </div>
     )
 }
 export default HomePage
