@@ -10,7 +10,7 @@ function App() {
     //BEM
     <div className="app">
       <Header/>
-      {/* <HomePage/> */}
+      <HomePage/>
      
     </div>
   );
