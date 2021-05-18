@@ -5,7 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const Header = () =>{
-
+    
 
     return (
         <div className="header">

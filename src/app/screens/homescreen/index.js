@@ -8,11 +8,16 @@ const HomePage = () => {
     return(
             /* home */
         <div className ="home">
-            <p>hello component</p>
+           
             {/* Header */}
-            <Banner/>
             {/* banner */}
+            <Banner/>
             {/* card sections */}
+            <div className='home_section'>
+            {/* <Card/>
+            <Card/>
+            <Card/> */}
+            </div>
             {/* footer */}
         
         </div>
