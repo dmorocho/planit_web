@@ -18,7 +18,7 @@ const Header = () =>{
 
             </div>
             <div className="header_right">
-                <p>become a host</p>
+                <p>plan</p>
                 <AccountCircleIcon/>
             </div>
         </div>

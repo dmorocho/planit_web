@@ -3,16 +3,25 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+
+// const searchOptions = {
+//   location: new google.maps.LatLng(-34, 151),
+//   radius: 2000,
+//   types: ['address']
+// }
  
 class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = { address: '' };
   }
- 
+  
+  
   handleChange = address => {
     this.setState({ address });
   };
+
+
  
   handleSelect = address => {
     geocodeByAddress(address)
@@ -65,4 +74,4 @@ class LocationSearchInput extends React.Component {
   }
 }
 
-export default  LocationSearchInput
+export default LocationSearchInput 
