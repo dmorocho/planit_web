@@ -1,45 +1,51 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+/*global google*/
 
-// const searchOptions = {
-//   location: new google.maps.LatLng(-34, 151),
-//   radius: 2000,
-//   types: ['address']
-// }
- 
-class LocationSearchInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { address: '' };
+const  LocationSearchInput = () =>{
+
+ const searchOptions = {
+    location: new google.maps.LatLng(40.731, -73.997),
+    radius: 5,
+    types: ['address']
   }
+   const [address,setAdress ] = useState('')
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { address: '' };
+  // }
   
   
-  handleChange = address => {
-    this.setState({ address });
+  const handleChange = (address) => {
+    setAdress(address);
   };
 
 
  
-  handleSelect = address => {
+  const handleSelect = (address) => {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => console.log('Success', latLng))
       .catch(error => console.error('Error', error));
   };
  
-  render() {
+ 
     return (
       <PlacesAutocomplete
-        value={this.state.address}
-        onChange={this.handleChange}
-        onSelect={this.handleSelect}
+        value={address}
+        onChange={handleChange}
+        onSelect={handleSelect}
+        searchOptions={searchOptions}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
+          <div
+          
+          >
             <input
+            
               {...getInputProps({
                 placeholder: 'Search Places ...',
                 className: 'location-search-input',
@@ -57,6 +63,7 @@ class LocationSearchInput extends React.Component {
                   : { backgroundColor: '#ffffff', cursor: 'pointer' };
                 return (
                   <div
+                  key= {suggestions.description}
                     {...getSuggestionItemProps(suggestion, {
                       className,
                       style,
@@ -71,7 +78,7 @@ class LocationSearchInput extends React.Component {
         )}
       </PlacesAutocomplete>
     );
-  }
+
 }
 
 export default LocationSearchInput 
