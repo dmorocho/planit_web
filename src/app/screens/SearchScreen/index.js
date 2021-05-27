@@ -5,8 +5,8 @@ const SearchPage = () => {
 
     return (
         <div className='SearchPage'>
-            
-            
+
+            <p>This is the search page</p>
         </div>
 
     )
